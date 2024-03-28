@@ -1,4 +1,4 @@
-package New;
+package Wasif;
 
 import java.util.Scanner;
 
@@ -65,7 +65,8 @@ public class Main {
         state.End();
         grid.Display ();
 
-
+        Pathfind pathfind = new Pathfind(grid.cells,cell_size);
+        pathfind.path_import(state.x-1,state.y-1,state.a-1,state.b-1);
 
     }
 }

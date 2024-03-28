@@ -1,4 +1,4 @@
-package New;
+package Wasif;
 
 import java.util.Scanner;
 
@@ -9,6 +9,7 @@ public class Robot_State {
     int y;
     int a;
     int b;
+
     public Robot_State(String cells[][],int cell_size){
         this.cells = cells;
         this.cell_size =cell_size ;
@@ -41,10 +42,7 @@ public class Robot_State {
         Start_setting();
     }
 
-
-
     public  void End() {
-
 
         System.out.println("\nEnding  Point : ");
 
@@ -69,6 +67,7 @@ public class Robot_State {
         }
         End_setting();
     }
+
     public void Start_setting(){
         // Cell Setting
         if (cells[x-1][y-1] == " X "){
@@ -81,7 +80,6 @@ public class Robot_State {
         }
         System.out.println();
     }
-
 
         // Cell Setting
      public void End_setting(){

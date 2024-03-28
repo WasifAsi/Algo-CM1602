@@ -1,9 +1,7 @@
-package New;
+package New_1;
 
 public class Grid {
-
-    private int Size;
-
+    int Size;
     public static String[][] cells;
 
     public Grid(int Size) {
@@ -38,5 +36,3 @@ public class Grid {
         }
     }
 }
-
-

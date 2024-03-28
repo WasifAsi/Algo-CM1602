@@ -1,7 +1,6 @@
-package New;
+package New_1;
 
 import java.util.Random;
-
 public class Obstacle {
     private  int [] colum;
     private  int [] Rows ;
@@ -34,4 +33,5 @@ public class Obstacle {
             cells[Rows[a]][colum[a]] = " X ";
         }
     }
+
 }
