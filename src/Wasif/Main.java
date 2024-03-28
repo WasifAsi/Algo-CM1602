@@ -30,27 +30,27 @@ public class Main {
 
         switch (cell_size){
             case 10:
-                Num_Obs = 15;
-                break;
-
-            case 11:
                 Num_Obs = 20;
                 break;
 
-            case 12:
-                Num_Obs = 25;
-                break;
-
-            case 13:
+            case 11:
                 Num_Obs = 30;
                 break;
 
+            case 12:
+                Num_Obs = 40;
+                break;
+
+            case 13:
+                Num_Obs = 50;
+                break;
+
             case 14:
-                Num_Obs = 35;
+                Num_Obs =60;
                 break;
 
             case 15:
-            Num_Obs = 40;
+            Num_Obs = 70;
         }
         obstacle.size_Setting(Num_Obs,cell_size);
         obstacle.Random();
@@ -66,8 +66,8 @@ public class Main {
         grid.Display ();
 
         Pathfind pathfind = new Pathfind(grid.cells,cell_size);
-        pathfind.path_import(state.x-1,state.y-1,state.a-1,state.b-1);
-
+        pathfind.pathImport(state.x-1,state.y-1,state.a-1,state.b-1);
+        grid.Display ();
     }
 }
 

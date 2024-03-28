@@ -19,12 +19,12 @@ public class Obstacle {
         Random random = new Random();
 
         for (int i=0; i<ArrSize; i++ ){
-            int Rm_C= random.nextInt(1,Size);
+            int Rm_C= random.nextInt(0,Size);
             colum[i] = Rm_C;
         }
 
         for (int j=0; j<ArrSize; j++ ){
-            int Rm_R= random.nextInt(1,Size);
+            int Rm_R= random.nextInt(0,Size);
             Rows[j] = Rm_R;
         }
     }
