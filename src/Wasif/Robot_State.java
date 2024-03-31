@@ -1,5 +1,6 @@
 package Wasif;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Robot_State {
@@ -21,22 +22,33 @@ public class Robot_State {
         System.out.println("\nStarting Point : ");
 
         while (true) {
-            System.out.print("Ender the Row: ");
-            x = Input.nextInt();
-            if ((0 < x) && (x <= cell_size)) {
-                break;
-            } else {
-                System.out.println("Ender the correct Row\n");
+            try {
+                System.out.print("Ender the Row: ");
+                x = Input.nextInt();
+
+                if ((0 < x) && (x <= cell_size)) {
+                    break;
+                } else {
+                    System.out.println("Ender the correct Row\n");
+                }
+            }catch (InputMismatchException e) {
+                System.out.println("Don't Enter Alphabet\n");
+                Input.nextLine();
             }
         }
 
         while (true) {
-            System.out.print("Ender the Colum : ");
-            y = Input.nextInt();
-            if ((0 < y) && (y <= cell_size)) {
-                break;
-            } else {
-                System.out.println("\nEnder the correct Colum\n");
+            try{
+                System.out.print("Ender the Colum : ");
+                y = Input.nextInt();
+                if ((0 < y) && (y <= cell_size)) {
+                    break;
+                } else {
+                    System.out.println("\nEnder the correct Colum\n");
+                }
+            }catch(InputMismatchException e) {
+                System.out.println("Don't Enter Alphabet\n");
+                Input.nextLine();
             }
         }
         Start_setting();
@@ -47,22 +59,32 @@ public class Robot_State {
         System.out.println("\nEnding  Point : ");
 
         while (true) {
-            System.out.print("Ender the Row : ");
-            a = Input.nextInt();
-            if ((0 < a) && (a <= cell_size)) {
-                break;
-            } else {
-                System.out.println("\nEnder the correct Row\n");
+            try{
+                System.out.print("Ender the Row : ");
+                a = Input.nextInt();
+                if ((0 < a) && (a <= cell_size)) {
+                    break;
+                } else {
+                    System.out.println("\nEnder the correct Row\n");
+                }
+            }catch(InputMismatchException e) {
+                System.out.println("Don't Enter Alphabet\n");
+                Input.nextLine();
             }
         }
 
         while (true) {
-            System.out.print("Ender the Colum : ");
-            b = Input.nextInt();
-            if ((0 < b) && (b <= cell_size)) {
-                break;
-            } else {
-                System.out.println("\nEnder the correct Colum\n");
+            try{
+                System.out.print("Ender the Colum : ");
+                b = Input.nextInt();
+                if ((0 < b) && (b <= cell_size)) {
+                    break;
+                } else {
+                    System.out.println("\nEnder the correct Colum\n");
+                }
+            }catch (InputMismatchException e) {
+                System.out.println("Don't Enter Alphabet\n");
+                Input.nextLine();
             }
         }
         End_setting();

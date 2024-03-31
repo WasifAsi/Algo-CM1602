@@ -78,12 +78,6 @@ public class Pathfind {
             markShortestPath(gridCells, path);
             System.out.println("Path found:");
 
-//            for (int i = 0; i < gridCells.length; i++) {
-//                for (int j = 0; j < gridCells[i].length; j++) {
-//                    System.out.print(gridCells[i][j]);
-//                }
-//                System.out.println();
-//            }
         } else {
             System.out.println("No path found!");
         }

@@ -1,5 +1,6 @@
 package Wasif;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -11,16 +12,22 @@ public class Main {
         Scanner Input =new Scanner(System.in);
 
         // Create a grid
-        while (true) {
-            System.out.print("Ender the size of Gird between 10 to 15 (width x height ) : ");
-            cell_size = Input.nextInt();
+        while (true){
+            try {
+                System.out.print("Enter the size of Gird between 10 to 15 (width x height ) : ");
+                cell_size = Input.nextInt();
 
-            if ((10 <= cell_size) && (cell_size <= 15)) {
-                break;
-            } else {
-                System.out.println("\nEnder the Correct value ");
+                if (cell_size >= 10 && cell_size <=15){
+                    break;
+                }else {
+                    System.out.println("Enter the correct value");
+                }
+            }catch (InputMismatchException e){
+                System.out.println("Don't Enter Alphabet\n");
+                Input.nextLine();
             }
         }
+
 
         Grid grid = new Grid(cell_size);
         grid.settingGrid();
