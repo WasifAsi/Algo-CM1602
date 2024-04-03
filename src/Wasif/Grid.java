@@ -11,6 +11,7 @@ public class Grid {
         cells = new String[Size][Size];
     }
 
+    // Grid setup
     public void settingGrid() {
         for (int i = 0; i < Size; i++) {
             for (int j = 0; j < Size; j++) {
@@ -18,9 +19,11 @@ public class Grid {
             }
         }
     }
-
+    // printing the Grid
     public void Display() {
         System.out.println("\nGrid with obstacles: ");
+
+        // column integrator printing with suitable space
         for (int k = 1; k <= Size; k++) {
             if ((10 <= k) && (k <= 15)) {
                 System.out.print(" " + k + "");
@@ -29,6 +32,8 @@ public class Grid {
             }
         }
         System.out.println();
+
+        // Printing Row integrator with 2D array
         for (int i = 0; i < Size; i++) {
             for (int j = 0; j < Size; j++) {
                 System.out.print(cells[i][j]);

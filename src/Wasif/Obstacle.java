@@ -14,7 +14,7 @@ public class Obstacle {
         colum=new int[ArrSize];
         Rows = new int[ArrSize];
     }
-
+    // Obstacle generating
     public void Random(){
         Random random = new Random();
 
@@ -29,8 +29,10 @@ public class Obstacle {
         }
     }
 
-    public void setObstacle(String cells[][] ) {
-        for (int a =0 ; a< ArrSize ; a++){                  // PUTTING OBSTACLE TO THE GRID
+
+    // PUTTING OBSTACLE TO THE GRID
+    public void setObstacle(String[][] cells) {
+        for (int a =0 ; a< ArrSize ; a++){
             cells[Rows[a]][colum[a]] = " x ";
         }
     }
