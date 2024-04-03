@@ -63,7 +63,7 @@ public class Pathfind {
             for (int j = 0; j < cellSize; j++) {
                 if (gridCells[i][j].equals(" - ") || gridCells[i][j].equals(" S ") || gridCells[i][j].equals(" E ")) {
                     grid[i][j] = 1;
-                } else if (gridCells[i][j].equals(" X ")) {
+                } else if (gridCells[i][j].equals(" x ")) {
                     grid[i][j] = 0;
                 }
             }

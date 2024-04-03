@@ -31,7 +31,7 @@ public class Obstacle {
 
     public void setObstacle(String cells[][] ) {
         for (int a =0 ; a< ArrSize ; a++){                  // PUTTING OBSTACLE TO THE GRID
-            cells[Rows[a]][colum[a]] = " X ";
+            cells[Rows[a]][colum[a]] = " x ";
         }
     }
 }

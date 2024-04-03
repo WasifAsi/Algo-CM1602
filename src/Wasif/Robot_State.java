@@ -92,7 +92,7 @@ public class Robot_State {
 
     public void Start_setting(){
         // Cell Setting
-        if (cells[x-1][y-1] == " X "){
+        if (cells[x-1][y-1] == " x "){
             System.out.println("\nThere was a Obstacle in that points");
             Start();
         }else {
@@ -106,7 +106,7 @@ public class Robot_State {
         // Cell Setting
      public void End_setting(){
             // Cell Setting
-            if (cells[a-1][b-1] == " X "){
+            if (cells[a-1][b-1] == " x "){
                 System.out.println("\nThere was a Obstacle in that points");
                 End();
             }else if(cells[a-1][b-1] == " S "){
