@@ -1,4 +1,4 @@
-package Wasif;
+package Path_Finder;
 
 import java.util.Random;
 

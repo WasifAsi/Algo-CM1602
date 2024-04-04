@@ -1,4 +1,4 @@
-package Wasif;
+package Path_Finder;
 
 public class Queue {
 
