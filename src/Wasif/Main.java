@@ -14,7 +14,7 @@ public class Main {
         // Create a grid
         while (true){
             try {
-                System.out.print("Enter the size of Gird between 10 to 15 (width x height ) : ");
+                System.out.print("Enter the size of Gird between 10 to 15 ( width x height ) : ");
                 cell_size = Input.nextInt();
 
                 if (cell_size >= 10 && cell_size <=15){
@@ -27,7 +27,6 @@ public class Main {
                 Input.nextLine();
             }
         }
-
 
         Grid grid = new Grid(cell_size);
         grid.settingGrid();
@@ -59,21 +58,24 @@ public class Main {
             case 15:
             Num_Obs = 70;
         }
+
         obstacle.size_Setting(Num_Obs,cell_size);
         obstacle.Random();
         obstacle.setObstacle(grid.cells);
 
         // Display the grid
+        System.out.println("\nGrid with obstacles  : ");
         grid.Display ();
 
         // Goal destination
         Robot_State state = new Robot_State(grid.cells,cell_size);
         state.Start();
         state.End();
-        grid.Display ();
 
-        Pathfind pathfind = new Pathfind(grid.cells,cell_size);
+        // displaying the grid with starting and ending points
+        PathFind pathfind = new PathFind(grid.cells,cell_size);
         pathfind.pathImport(state.x-1,state.y-1,state.a-1,state.b-1);
+        System.out.println("\nGrid with obstacles, Staring and Ending points : \n");
         grid.Display ();
     }
 }

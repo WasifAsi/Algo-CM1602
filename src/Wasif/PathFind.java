@@ -1,10 +1,10 @@
 package Wasif;
 
-public class Pathfind {
+public class PathFind {
     private String[][] gridCells;
     private int cellSize;
 
-    public Pathfind(String[][] gridCells, int cellSize) {
+    public PathFind(String[][] gridCells, int cellSize) {
         this.gridCells = gridCells;
         this.cellSize = cellSize;
     }
@@ -18,44 +18,7 @@ public class Pathfind {
             this.col = col;
         }
     }
-
-    private static class Queue {
-        private int[] array;
-        private int front;
-        private int rear;
-        private int size;
-
-        public Queue(int capacity) {
-            array = new int[capacity];
-            front = 0;
-            rear = -1;
-            size = 0;
-        }
-
-        public void enqueue(int data) {
-            if (size == array.length) {
-                throw new IllegalStateException("Queue is full");
-            }
-            rear = (rear + 1) % array.length;
-            array[rear] = data;
-            size++;
-        }
-
-        public int dequeue() {
-            if (isEmpty()) {
-                throw new IllegalStateException("Queue is empty");
-            }
-            int data = array[front];
-            front = (front + 1) % array.length;
-            size--;
-            return data;
-        }
-
-        public boolean isEmpty() {
-            return size == 0;
-        }
-    }
-
+    // reading the grid and making the adjacency matrix
     public void pathImport(int startX, int startY, int endX, int endY) {
         int[][] grid = new int[cellSize][cellSize];
 
@@ -76,13 +39,14 @@ public class Pathfind {
 
         if (path != null) {
             markShortestPath(gridCells, path);
-            System.out.println("Path found:");
+            System.out.println("\nPath found:");
 
         } else {
-            System.out.println("No path found!");
+            System.out.println("No path found! Paths are blocked");
         }
     }
 
+    // path finding
     public static int[][] bfsPathPlanning(int[][] grid, Cell start, Cell end) {
         int n = grid.length;
         boolean[] visited = new boolean[n * n];
@@ -93,12 +57,12 @@ public class Pathfind {
         int startIdx = start.row * n + start.col;
         int goalIdx = end.row * n + end.col;
 
-        Queue queue = new Queue(n * n);
+        Queue queue = new Queue();
         queue.enqueue(startIdx);
         visited[startIdx] = true;
         parent[startIdx] = -1;
 
-        while (queue.size != 0) {
+        while (!queue.isEmpty() ) {
             int currentIdx = queue.dequeue();
 
             if (currentIdx == goalIdx) {
@@ -108,7 +72,8 @@ public class Pathfind {
 
             int row = currentIdx / n;
             int col = currentIdx % n;
-            int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up, Down, Left, Right
+            int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1} };   // Up, Down, Left, Right ( 4 directions )
+                                                                        // for 8 directions {-1,-1},{-1,1},{1,-1},{1,1} add those too
             for (int[] dir : directions) {
                 int newRow = row + dir[0];
                 int newCol = col + dir[1];
@@ -121,7 +86,6 @@ public class Pathfind {
                 }
             }
         }
-
         return null;
     }
 
@@ -150,8 +114,11 @@ public class Pathfind {
             int row = cell[0];
             int col = cell[1];
             if (!gridCells[row][col].equals(" S ") && !gridCells[row][col].equals(" E ")) {
-                gridCells[row][col] = " * ";
+                if ((row == 0 && col != 0) || (row != 0 && col == 0) || (row != 0 && col != 0) ) {
+                    gridCells[row][col] = " * ";
+                }
             }
         }
     }
 }
+

@@ -21,7 +21,7 @@ public class Grid {
     }
     // printing the Grid
     public void Display() {
-        System.out.println("\nGrid with obstacles: ");
+
 
         // column integrator printing with suitable space
         for (int k = 1; k <= Size; k++) {
